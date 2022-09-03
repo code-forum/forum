@@ -1,6 +1,6 @@
 # forum
 <p style="text-align: center">
-    <a href="https://github.com/code-messenger/forum" target="_blank" rel="noopener noreferrer">
+    <a href="https://github.com/code-forum/forum" target="_blank" rel="noopener noreferrer">
         <img width="40%" src="https://forum-1308538340.cos.ap-beijing.myqcloud.com/img%2Flogo.jpg" alt="Halo logo" />
     </a>
 </p>
