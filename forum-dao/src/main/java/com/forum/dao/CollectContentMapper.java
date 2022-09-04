@@ -1,7 +1,7 @@
 package com.forum.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.forum.model.entity.CollectionContent;
+import com.forum.model.entity.CollectContent;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.forum.model.entity.CollectionContent;
  * @author code-messenger
  * @since 2022-09-04
  */
-public interface CollectionContentMapper extends BaseMapper<CollectionContent> {
+public interface CollectContentMapper extends BaseMapper<CollectContent> {
 
 }

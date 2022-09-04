@@ -1,7 +1,7 @@
 package com.forum.service;
 
-import com.forum.mbg.forum.entity.Content;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.forum.model.entity.Content;
 
 /**
  * <p>

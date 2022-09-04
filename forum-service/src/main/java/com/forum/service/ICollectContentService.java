@@ -1,7 +1,7 @@
 package com.forum.service;
 
-import com.forum.mbg.forum.entity.CollectionContent;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.forum.model.entity.CollectContent;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author code-messenger
  * @since 2022-09-04
  */
-public interface ICollectionContentService extends IService<CollectionContent> {
+public interface ICollectContentService extends IService<CollectContent> {
 
 }

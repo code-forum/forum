@@ -1,15 +1,13 @@
 package com.forum.service.impl;
 
-import com.forum.mbg.forum.entity.Tag;
-import com.forum.mbg.forum.mapper.TagMapper;
-import com.forum.mbg.forum.service.ITagService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.forum.dao.TagMapper;
+import com.forum.model.entity.Tag;
+import com.forum.service.ITagService;
 import org.springframework.stereotype.Service;
 
 /**
- * <p>
  * 标签表 服务实现类
- * </p>
  *
  * @author code-messenger
  * @since 2022-09-04

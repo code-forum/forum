@@ -1,7 +1,7 @@
 package com.forum.dao;
 
-import com.forum.mbg.forum.entity.ThumbsUp;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.forum.model.entity.ThumbsUp;
 
 /**
  * <p>

@@ -1,15 +1,13 @@
 package com.forum.service.impl;
 
-import com.forum.mbg.forum.entity.Content;
-import com.forum.mbg.forum.mapper.ContentMapper;
-import com.forum.mbg.forum.service.IContentService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.forum.dao.ContentMapper;
+import com.forum.model.entity.Content;
+import com.forum.service.IContentService;
 import org.springframework.stereotype.Service;
 
 /**
- * <p>
  * 文章表 服务实现类
- * </p>
  *
  * @author code-messenger
  * @since 2022-09-04
