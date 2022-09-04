@@ -1,0 +1,66 @@
+package com.forum.base.exception;
+
+import com.forum.base.common.ResultEntity;
+import com.forum.base.enumerate.CommonEnum;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import java.io.Serializable;
+
+/**
+ * @projectName: forum
+ * @package: com.forum.base.exception
+ * @className: GlobalException
+ * @author: 李晓龙
+ * @description: 全局异常处理类
+ * @date: 2022/9/3 18:46
+ * @version: 1.0
+ */
+@ControllerAdvice
+public class GlobalException  {
+    private static final Logger logger= LoggerFactory.getLogger(GlobalException.class);
+
+    /**
+     * 通用异常处理
+     * @param req
+     * @param e 异常
+     * @return  ResultEntity
+     */
+    @ExceptionHandler(value = BizException.class)
+    @ResponseBody
+    public ResultEntity bizExceptionHandler(HttpServletRequest req,BizException e){
+        logger.error("发生业务异常！原因是：{}",e.errorMsg);
+        return ResultEntity.failed(-1,ResultEntity.FAILED,e.getErrorMsg());
+    }
+    /**
+     * 空指针异常处理
+     * @param req
+     * @param e 异常
+     * @return  ResultEntity
+     */
+    @ExceptionHandler(value = NullPointerException.class)
+    @ResponseBody
+    public ResultEntity bizExceptionHandler(HttpServletRequest req,NullPointerException e){
+        logger.error("发生指针异常！原因是：{}",e.getMessage());
+        return ResultEntity.failed(-1,ResultEntity.FAILED, CommonEnum.BODY_NOT_MATCH.getResultMsg());
+    }
+
+    /**
+     * 处理其他异常
+     * @param req
+     * @param e
+     * @return
+     */
+    @ExceptionHandler(value =Exception.class)
+    @ResponseBody
+    public ResultEntity exceptionHandler(HttpServletRequest req, Exception e){
+        logger.error("未知异常！原因是:",e);
+        return ResultEntity.failed(-1,ResultEntity.FAILED,CommonEnum.INTERNAL_SERVER_ERROR.getResultMsg());
+    }
+}
