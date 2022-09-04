@@ -2,6 +2,7 @@ package com.forum.base.enumerate;
 
 import com.forum.base.exception.BaseErrorInfoInterface;
 
+
 public enum CommonEnum implements BaseErrorInfoInterface {
 	// 数据操作错误定义
 	SUCCESS("200", "成功!"), 

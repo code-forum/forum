@@ -2,6 +2,11 @@ package com.forum.model.entity;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
+
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -16,6 +21,7 @@ import lombok.Data;
  */
 @Data
 @ApiModel(value = "Category对象", description = "分类")
+@TableName("category")
 public class Category extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
@@ -28,5 +34,5 @@ public class Category extends BaseEntity {
 
     @ApiModelProperty("排序")
     private String code;
-    
+
 }

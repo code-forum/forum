@@ -2,6 +2,7 @@ package com.forum.model.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
@@ -27,5 +28,7 @@ public class BaseEntity implements Serializable {
     private LocalDateTime updateTime;
     
     @ApiModelProperty(value = "逻辑删除 (1:已删除, 0:未删除)")
+    @TableField(value = "is_deleted",fill = FieldFill.INSERT)
+    @TableLogic
     private Integer isDeleted;
 }
