@@ -1,6 +1,6 @@
 package com.forum.web.controller;
 
-import com.forum.base.common.ResultEntity;
+import com.forum.base.result.ResultEntity;
 import com.forum.base.exception.BizException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

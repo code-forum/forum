@@ -1,4 +1,4 @@
-package com.forum.base.common;
+package com.forum.base.result;
 
 import java.io.Serializable;
 
@@ -13,11 +13,12 @@ import java.io.Serializable;
  */
 
 public class ResultEntity<T> implements Serializable {
-
-
     private Integer code;
+    
     private String msg;
-    private T obj;
+    
+    private T data;
+    
     public static final String SUCCESS="SUCCESS";
     public static final String FAILED="FAILED";
 
@@ -37,8 +38,8 @@ public class ResultEntity<T> implements Serializable {
         this.msg = msg;
     }
 
-    public void setObj(T obj) {
-        this.obj = obj;
+    public void setData(T data) {
+        this.data = data;
     }
 
     public ResultEntity() {
@@ -47,11 +48,11 @@ public class ResultEntity<T> implements Serializable {
     public ResultEntity(Integer code, String msg, T obj) {
         this.code = code;
         this.msg = msg;
-        this.obj = obj;
+        this.data = obj;
     }
 
-    public Object getObj() {
-        return obj;
+    public Object getData() {
+        return data;
     }
     /**
      * 返回成功 增删改查

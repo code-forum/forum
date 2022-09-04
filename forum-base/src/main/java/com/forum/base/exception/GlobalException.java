@@ -1,17 +1,15 @@
 package com.forum.base.exception;
 
-import com.forum.base.common.ResultEntity;
+import com.forum.base.result.ResultEntity;
 import com.forum.base.enumerate.CommonEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import java.io.Serializable;
 
 /**
  * @projectName: forum
