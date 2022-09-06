@@ -1,4 +1,4 @@
-package com.forum.base.Handler;
+package com.forum.base.handler;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;
@@ -16,27 +16,28 @@ import java.util.Date;
  * @version: 1.0
  */
 @Component
-public class MybatisPlusHandler  implements MetaObjectHandler {
+public class MybatisPlusHandler implements MetaObjectHandler {
 
     /**
      * 修改时间
-     * @param metaObject
+     *
+     * @param metaObject 元信息
      */
     @Override
     public void updateFill(MetaObject metaObject) {
-        this.setFieldValByName("updateTime",new Date(),metaObject);
+        this.setFieldValByName("updateTime", new Date(), metaObject);
     }
 
     /**
      * 添加时间
-     * @param metaObject
+     *
+     * @param metaObject 元信息
      */
     @Override
     public void insertFill(MetaObject metaObject) {
         //设置属性值
-        this.setFieldValByName("create_time",new Date(),metaObject);
-        this.setFieldValByName("update_time",new Date(),metaObject);
-        this.setFieldValByName("is_deleted",0,metaObject);
-
+        this.setFieldValByName("create_time", new Date(), metaObject);
+        this.setFieldValByName("update_time", new Date(), metaObject);
+        this.setFieldValByName("is_delete", 0, metaObject);
     }
 }

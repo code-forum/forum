@@ -1,6 +1,8 @@
 package com.forum.model.vo;
 
 /**
+ * 用户VO
+ *
  * @author code-messenger
  * @since 2022/9/3 17:59
  */

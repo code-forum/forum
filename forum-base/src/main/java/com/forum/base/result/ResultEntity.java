@@ -14,13 +14,13 @@ import java.io.Serializable;
 
 public class ResultEntity<T> implements Serializable {
     private Integer code;
-    
+
     private String msg;
-    
+
     private T data;
-    
-    public static final String SUCCESS="SUCCESS";
-    public static final String FAILED="FAILED";
+
+    public static final String SUCCESS = "SUCCESS";
+    public static final String FAILED = "FAILED";
 
     public Integer getCode() {
         return code;
@@ -54,74 +54,84 @@ public class ResultEntity<T> implements Serializable {
     public Object getData() {
         return data;
     }
+
     /**
      * 返回成功 增删改查
-     * @return ResultEntity
+     *
      * @param <Type>
+     * @return ResultEntity
      */
-    public static <Type> ResultEntity<Type> successWithoutData(){
-        return ResultEntity.successWithoutData(0,SUCCESS,null);
+    public static <Type> ResultEntity<Type> successWithoutData() {
+        return ResultEntity.successWithoutData(0, SUCCESS, null);
     }
 
     /**
      * 返回成功 数据查询
+     *
      * @param data
-     * @return
      * @param <Type>
+     * @return
      */
-    public static <Type> ResultEntity<Type> successWithoutData(Type data){
-        return ResultEntity.successWithoutData(0,SUCCESS,data);
+    public static <Type> ResultEntity<Type> successWithoutData(Type data) {
+        return ResultEntity.successWithoutData(0, SUCCESS, data);
     }
 
     /**
      * 返回成功 携带消息
-     * @param msg msg
-     * @param data data
-     * @return
+     *
+     * @param msg    msg
+     * @param data   data
      * @param <Type>
+     * @return
      */
-    public static <Type> ResultEntity<Type> successWithoutData(String msg,Type data){
+    public static <Type> ResultEntity<Type> successWithoutData(String msg, Type data) {
 
-        return ResultEntity.successWithoutData(0,msg,data);
+        return ResultEntity.successWithoutData(0, msg, data);
     }
+
     /**
      * 返回成功，携带状态吗
-     * @param code code
-     * @param msg msg
-     * @param data data
-     * @return
+     *
+     * @param code   code
+     * @param msg    msg
+     * @param data   data
      * @param <Type>
+     * @return
      */
-    public static <Type> ResultEntity<Type> successWithoutData(Integer code,String msg,Type data){
+    public static <Type> ResultEntity<Type> successWithoutData(Integer code, String msg, Type data) {
 
-        return new ResultEntity<>(code,msg,data);
+        return new ResultEntity<>(code, msg, data);
     }
-    /**
-     *返回失败 携带状态码返回值与数据
-     * @return
-     * @param <Type>
-     */
-    public static <Type> ResultEntity<Type> failed(Integer code,String msg,Type data){
 
-        return new ResultEntity<>(code,msg,data);
+    /**
+     * 返回失败 携带状态码返回值与数据
+     *
+     * @param <Type>
+     * @return
+     */
+    public static <Type> ResultEntity<Type> failed(Integer code, String msg, Type data) {
+
+        return new ResultEntity<>(code, msg, data);
     }
 
     /**
      * 返回失败 返回消息以及值
-     * @return
+     *
      * @param <Type>
+     * @return
      */
-    public static <Type> ResultEntity<Type> failed(String msg,Type data){
+    public static <Type> ResultEntity<Type> failed(String msg, Type data) {
 
-        return ResultEntity.failed(-1,msg,data);
+        return ResultEntity.failed(-1, msg, data);
     }
 
     /**
-     *返回失败 不携带数据
-     * @return
+     * 返回失败 不携带数据
+     *
      * @param <Type>
+     * @return
      */
-    public static <Type> ResultEntity<Type> failed(){
-        return new ResultEntity<>(-1,FAILED,null);
+    public static <Type> ResultEntity<Type> failed() {
+        return new ResultEntity<>(-1, FAILED, null);
     }
 }

@@ -7,11 +7,13 @@ import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import java.util.Collections;
 
 /**
+ * 代码生成器
+ *
  * @author code-messenger
  * @since 2022/9/4 14:23
  */
 public class FastAutoGeneratorTest {
-    
+
     public static void main(String[] args) {
         FastAutoGenerator.create("jdbc:mysql://112.124.10.0:3306/forum?serverTimezone=Asia/Shanghai", "root", "Zxcv0812.").globalConfig(builder -> {
                     builder.author("code-messenger") // 设置作者

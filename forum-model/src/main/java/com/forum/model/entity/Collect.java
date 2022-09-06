@@ -5,9 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
- * <p>
- * 
- * </p>
+ * 收藏实体
  *
  * @author code-messenger
  * @since 2022-09-04

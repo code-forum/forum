@@ -1,8 +1,6 @@
 package com.forum.model.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
-import java.time.LocalDateTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -18,10 +16,10 @@ import lombok.Data;
 @Data
 @TableName("thumbs_up")
 @ApiModel(value = "ThumbsUp对象", description = "点赞表")
-public class ThumbsUp extends BaseEntity{
+public class ThumbsUp extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
-    
+
     @ApiModelProperty("点赞文章Id")
     private Integer contentId;
 
@@ -30,5 +28,5 @@ public class ThumbsUp extends BaseEntity{
 
     @ApiModelProperty("点赞用户Id")
     private Integer userId;
-    
+
 }
