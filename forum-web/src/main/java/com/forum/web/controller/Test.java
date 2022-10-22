@@ -37,12 +37,14 @@ public class Test {
     public ResultEntity getError(){
         throw new BizException("-1","用户密码错误");
     }
+
     @ApiOperation(value = "测试接口空指针异常错误返回")
     @GetMapping("/test3")
     public ResultEntity getError1(){
         test.getError1();
         return ResultEntity.successWithoutData();
     }
+
     @ApiOperation(value = "获取分类信息")
     @GetMapping("getCateGoryTest")
     public ResultEntity getCategoryTest(){
