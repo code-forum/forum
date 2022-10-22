@@ -15,7 +15,6 @@
         <module>forum-service</module>
         <module>forum-web</module>
         <module>forum-dao</module>
-        <module>forum-mbg</module>
     </modules>
 
     <properties>
@@ -97,7 +96,6 @@
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 
