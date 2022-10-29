@@ -4,18 +4,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>com.forum</groupId>
-        <artifactId>forum</artifactId>
+        <artifactId>forum-article</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
+
     <packaging>jar</packaging>
     <artifactId>forum-web</artifactId>
+    <modelVersion>4.0.0</modelVersion>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -33,7 +35,7 @@
             <artifactId>forum-model</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-    
+
         <dependency>
             <groupId>com.forum</groupId>
             <artifactId>forum-service</artifactId>

@@ -20,6 +20,6 @@ import org.springframework.context.annotation.ComponentScan;
 @MapperScan("com.forum.dao")
 public class ForumWebApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ForumWebApplication.class,args);
+        SpringApplication.run(ForumWebApplication.class, args);
     }
 }

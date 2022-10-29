@@ -12,10 +12,7 @@
     <modules>
         <module>forum-base</module>
         <module>forum-model</module>
-        <module>forum-service</module>
-        <module>forum-web</module>
-        <module>forum-dao</module>
-        <module>forum-mbg</module>
+        <module>forum-article</module>
     </modules>
     
     <properties>

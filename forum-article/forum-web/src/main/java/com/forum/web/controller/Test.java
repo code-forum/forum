@@ -47,7 +47,7 @@ public class Test {
 
     @ApiOperation(value = "获取分类信息")
     @GetMapping("getCateGoryTest")
-    public ResultEntity getCategoryTest(){
+    public ResultEntity getCategoryTest() {
         List<Category> list = iCategoryService.list();
         return ResultEntity.successWithoutData(list);
     }
