@@ -22,7 +22,7 @@ import java.util.Map;
  */
 @Api("文章控制器")
 @RestController
-@RequestMapping("api/article")
+@RequestMapping("forum/api/article")
 public class ArticleController {
     @Autowired
     private IContentService articleService;

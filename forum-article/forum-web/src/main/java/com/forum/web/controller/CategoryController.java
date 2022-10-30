@@ -2,6 +2,7 @@ package com.forum.web.controller;
 
 import com.forum.base.result.ResultEntity;
 import com.forum.model.entity.Category;
+import com.forum.model.vo.CategoryTreeVo;
 import com.forum.service.ICategoryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -18,7 +19,7 @@ import java.util.List;
 
 @Api("分类目录控制器")
 @RestController
-@RequestMapping("form/category")
+@RequestMapping("form/api/category")
 public class CategoryController {
 
     private final ICategoryService categoryService;
@@ -38,11 +39,9 @@ public class CategoryController {
    * @date: 2022/10/21 21:00
    */
     @ApiOperation("获取分类列表")
-    @GetMapping("getCategoryList/{pId}")
-    public ResultEntity<List<Category>> getCategoryList(
-            @ApiParam("父id")
-            @PathVariable("pId") Integer pId){
-        //获取父类信息，并更新
-        return null;
+    @GetMapping("getCategoryList")
+    public ResultEntity<List<CategoryTreeVo>> getCategoryList(){
+        return categoryService.getCategoryList();
     }
+
 }
