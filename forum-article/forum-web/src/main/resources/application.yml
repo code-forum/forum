@@ -14,10 +14,10 @@ spring:
   jackson:
     date-format: java.text.SimpleDateFormat
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: Zxcv0812.
-    url: jdbc:mysql://112.124.10.0:33306/forum?Unicode=true&characterEncoding=gbk&autoReconnect=true&failOverReadOnly=false
+    url: jdbc:mysql://112.124.10.0:3306/forum?Unicode=true&characterEncoding=gbk&autoReconnect=true&failOverReadOnly=false&allowPublicKeyRetrieval=true
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher

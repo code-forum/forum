@@ -2,4 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.forum.dao.ContentMapper">
 
+    <select id="getArticleList" resultType="com.forum.model.vo.ContentVo">
+        select ctt.id,ctt.article_content,ctt.content_name, ctt.create_time,ctt.update_time
+        , ctg.category_name as categoryName from content ctt
+        left join category ctg on ctt.category_id=ctg.id
+        <where>
+            <if test="contentName !=null and contentName !='' ">
+                ctt.content_name=#{contentName}
+            </if>
+        </where>
+    </select>
 </mapper>

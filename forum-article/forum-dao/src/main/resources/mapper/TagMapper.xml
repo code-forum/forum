@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.forum.dao.TagMapper">
+    <select id="selectTagByContentId" resultType="com.forum.model.entity.Tag">
+
+        select t.id,t.tag_name,t.create_time,t.update_time
+        from content_tag ctag
+        INNER JOIN tag  t
+        on ctag.tag_id=t.id
+        where ctag.content_id=#{id}
+    </select>
+</mapper>
