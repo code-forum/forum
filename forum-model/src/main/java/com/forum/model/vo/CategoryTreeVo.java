@@ -27,5 +27,5 @@ public class CategoryTreeVo extends BaseEntity {
     @ApiModelProperty("排序")
     private String code;
 
-    private List<CategoryTreeVo> child;
+    private List<CategoryTreeVo> children;
 }

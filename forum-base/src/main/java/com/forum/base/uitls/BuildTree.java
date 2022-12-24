@@ -23,7 +23,7 @@ public class BuildTree {
             //父节点
             if(category.getPId()==0){
                 BeanUtils.copyProperties(category,categoryTreeVo);
-                categoryTreeVo.setChild(getChild(node,categoryTreeVo));
+                categoryTreeVo.setChildren(getChild(node,categoryTreeVo));
                 categoryTreeVoList.add(categoryTreeVo);
             }
         }
@@ -36,10 +36,10 @@ public class BuildTree {
             CategoryTreeVo categoryTreeVo=new CategoryTreeVo();
             if(category.getPId().longValue()==categoryPrintTreeVo.getId().longValue()){
                 BeanUtils.copyProperties(category,categoryTreeVo);
-                categoryTreeVo.setChild(getChild(node,categoryTreeVo));
+                categoryTreeVo.setChildren(getChild(node,categoryTreeVo));
                 child.add(categoryTreeVo);
             }
-            categoryTreeVo.setChild(null);
+            categoryTreeVo.setChildren(null);
         }
         return child;
     }

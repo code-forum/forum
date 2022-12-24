@@ -27,6 +27,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
 
     @Override
     public ResultEntity<List<CategoryTreeVo>> getCategoryList() {
+        Category category = categoryMapper.selectOne(null);
         //查询出全部列表 通过工具类进行树构造
         return ResultEntity.successWithoutData( BuildTree.getBuildTree(categoryMapper.selectList(null)));
     }

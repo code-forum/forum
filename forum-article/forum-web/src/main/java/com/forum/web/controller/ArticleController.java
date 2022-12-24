@@ -23,6 +23,7 @@ import java.util.Map;
 @Api("文章控制器")
 @RestController
 @RequestMapping("forum/api/article")
+@CrossOrigin
 public class ArticleController {
     @Autowired
     private IContentService articleService;
@@ -46,4 +47,12 @@ public class ArticleController {
 
         return articleService.getArticleList(contentVo, pageSize, pageNum);
     }
+    /*** 
+     * @description 文章审核
+     * @param: null 
+     * @throws 
+     * @author 李晓龙
+     * @date: 2022/10/31/ 19:49:11
+     * @return: * @return: null
+     */
 }
