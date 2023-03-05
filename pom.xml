@@ -13,6 +13,7 @@
         <module>forum-base</module>
         <module>forum-model</module>
         <module>forum-article</module>
+        <module>forum-support</module>
     </modules>
     
     <properties>
