@@ -15,7 +15,7 @@
         <module>forum-article</module>
         <module>forum-support</module>
     </modules>
-    
+
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
@@ -30,8 +30,41 @@
         <springfox-boot.version>3.0.0</springfox-boot.version>
         <swagger-bootstrap-ui.version>1.9.6</swagger-bootstrap-ui.version>
         <pageHelper-version>5.3.2</pageHelper-version>
+        <spring.cloud.alibaba.version>2.2.1.RELEASE</spring.cloud.alibaba.version>
+        <spring.cloud.version>Hoxton.SR6</spring.cloud.version>
     </properties>
-    
+<!--    <profiles>-->
+<!--        <profile>-->
+<!--            <id>mycof</id>-->
+<!--            <repositories>-->
+<!--                &lt;!&ndash; 私有库地址&ndash;&gt;-->
+<!--                <repository>-->
+<!--                    <id>nexus</id>-->
+<!--                    <url>http://8.222.128.80:8081/repository/maven-public/</url>-->
+<!--                    <releases>-->
+<!--                        <enabled>true</enabled>-->
+<!--                    </releases>-->
+<!--                    <snapshots>-->
+<!--                        <enabled>true</enabled>-->
+<!--                    </snapshots>-->
+<!--                </repository>-->
+<!--            </repositories>-->
+<!--            <pluginRepositories>-->
+<!--                &lt;!&ndash;插件库地址&ndash;&gt;-->
+<!--                <pluginRepository>-->
+<!--                    <id>nexus</id>-->
+<!--                    <url>http://8.222.128.80:8081/repository/maven-public/</url>-->
+<!--                    <releases>-->
+<!--                        <enabled>true</enabled>-->
+<!--                    </releases>-->
+<!--                    <snapshots>-->
+<!--                        <enabled>true</enabled>-->
+<!--                    </snapshots>-->
+<!--                </pluginRepository>-->
+<!--            </pluginRepositories>-->
+<!--        </profile>-->
+<!--    </profiles>-->
+
     <dependencyManagement>
         <dependencies>
             <!-- spring boot-->
@@ -39,6 +72,22 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring-boot-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--阿里巴巴下载仓库-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring.cloud.alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--springcloud下载仓库-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -137,7 +186,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
-        
+        <!--nacos client-->
+        <!--nacos client-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
         <!-- lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -150,5 +204,37 @@
             <artifactId>springfox-boot-starter</artifactId>
         </dependency>
     </dependencies>
+
+    <profiles>
+                <profile>
+                    <id>mycof</id>
+                    <repositories>
+                        <!-- 私有库地址-->
+                        <repository>
+                            <id>nexus</id>
+                            <url>http://8.222.128.80:8081/repository/maven-public/</url>
+                            <releases>
+                                <enabled>true</enabled>
+                            </releases>
+                            <snapshots>
+                                <enabled>true</enabled>
+                            </snapshots>
+                        </repository>
+                    </repositories>
+                    <pluginRepositories>
+                        <!--插件库地址-->
+                        <pluginRepository>
+                            <id>nexus</id>
+                            <url>http://8.222.128.80:8081/repository/maven-public/</url>
+                            <releases>
+                                <enabled>true</enabled>
+                            </releases>
+                            <snapshots>
+                                <enabled>true</enabled>
+                            </snapshots>
+                        </pluginRepository>
+                    </pluginRepositories>
+                </profile>
+    </profiles>
 
 </project>

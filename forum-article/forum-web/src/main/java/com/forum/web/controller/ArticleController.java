@@ -47,12 +47,4 @@ public class ArticleController {
 
         return articleService.getArticleList(contentVo, pageSize, pageNum);
     }
-    /*** 
-     * @description 文章审核
-     * @param: null 
-     * @throws 
-     * @author 李晓龙
-     * @date: 2022/10/31/ 19:49:11
-     * @return: * @return: null
-     */
 }
